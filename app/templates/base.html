@@ -1,0 +1,170 @@
+{% extends "bootstrap/base.html" %}
+
+{# Block for Page Title #}
+{% block title %}
+    {% if title %}{{ title }}{% else %}.: Flask-Boilerplate :.{% endif %}
+{% endblock title %}
+
+{# Block for Head section #}
+{% block head %}
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/png">
+    {{ super() }}
+{% endblock head %}
+
+{# Block for meta tags #}
+{% block metas %}
+    {{ super() }}
+{% endblock metas %}
+
+{# Block for CSS styles #}
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" type="text/css"
+          href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock styles %}
+
+{# Block for JS scripts #}
+{% block scripts %}
+    {{ super() }}
+    {{ moment.include_moment() }}
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+{% endblock scripts %}
+
+{# Block for Navigation Bar #}
+{% block navbar %}
+    <nav class="navbar navbar-expand-lg navbar-expand-md navbar-light bg-light">
+        <div class="container">
+            {# Uncomment the line below to use an image as the NavBar Icon #}
+            {#  <a class="navbar-brand" href="/"><img src="{{ url_for('static', filename='images/logo.png') }}"></a>#}
+            <a class="navbar-brand" href="/">MySiteName</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Posts
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#"><i class="fa fa-list"></i> List</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#"><i class="fa fa-plus"></i> New</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Disabled</a>
+                    </li>
+                </ul>
+                {#      SEARCH FORM - BEGIN     #}
+                {#    <form class="form-inline my-2 my-lg-0">#}
+                {#      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">#}
+                {#      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>#}
+                {#    </form>#}
+                {#      SEARCH FORM - END #}
+                {#      SIMPLE PROFILE DROPDOWN - BEGIN #}
+                {#    <ul class=""navbar-nav>#}
+                {#    <!-- PROFILE DROPDOWN - scrolling off the page to the right -->#}
+                {#        <li class="nav-item dropdown">#}
+                {#            <a href="#" class="nav-link dropdown-toggle" id="navDropDownLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
+                {#        Profile#}
+                {#            </a>#}
+                {#            <div class="dropdown-menu" aria-labelledby="navDropDownLink">#}
+                {#                <a class="dropdown-item" href="#">Preferences</a>#}
+                {#                <div class="dropdown-divider"></div>#}
+                {#                <a class="dropdown-item" href="#">Logout</a>#}
+                {#            </div>#}
+                {#        </li>#}
+                {#    </ul>#}
+                {#      SIMPLE PROFILE DROPDOWN - END #}
+                <ul class="nav navbar-nav navbar-right">
+
+                    {% if current_user.is_anonymous %}
+                        <li><a href="{{ url_for('auth.login') }}">{{ _('Login') }}</a></li>
+                    {% else %}
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        {{ current_user.username }}
+                        {#                        Account#}
+                        <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="navbar-content">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <img src="{{ current_user.email|gravatar(size=120) }}"
+                                                 alt="Alternate Text" class="img-responsive"/>
+                                            {#                                            <p class="text-center small">#}
+                                            {#                                                <a href="#">Change Photo</a></p>#}
+                                        </div>
+                                        <div class="col-md-7">
+                                            <span>{{ current_user.name }}</span>
+                                            <p class="text-muted small">{{ current_user.email }}</p>
+                                            <div class="divider">
+                                            </div>
+                                            <a href="{{ url_for('main.user', username=current_user.username) }}"
+                                               class="btn btn-primary btn-sm active">View Profile</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="navbar-footer">
+                                    <div class="navbar-footer-content">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <a href="#" class="btn btn-default btn-sm">_('Change Password')</a>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <a href="{{ url_for('auth.logout') }}"
+                                                   class="btn btn-default btn-sm pull-right">_('Logout')</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    {% endif %}
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+{% endblock navbar %}
+
+{# Block for main content container #}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col col-12">
+                <div class="title text-center h1 mb-4">{% block page_title %}Home{% endblock %}</div>
+            </div>
+        </div>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}" role="alert">
+                        {{ message|safe }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        {# application content goes inside app_content block #}
+        {% block app_content %}{% endblock app_content %}
+    </div>
+    <footer class="footer fixed-bottom bg-light border-top mt-4 ">
+        <div class="container pt-2 footer-copyright text-center small">
+            <span class="text-muted"><a href="//frederico.cf" class="text-primary">Frederico Freire Boaventura</a> <i
+                    class="fa fa-copyright"></i> 2019-2019</span>
+        </div>
+    </footer>
+{% endblock content %}
