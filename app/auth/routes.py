@@ -42,7 +42,7 @@ def logout():
 def signup():
     if current_user.is_authenticated:
         return redirect(url_for('main.index'))
-    
+
     form = RegistrationForm()
     if form.validate_on_submit():
         user = User(username=form.username.data, email=form.email.data)
@@ -51,7 +51,7 @@ def signup():
         db.session.commit()
         flash(_('Congratulations! You are now a registered user!'))
         return redirect(url_for('auth.login'))
-    
+
     return render_template('auth/signup.html', title=_('Sign Up'), form=form)
 
 
@@ -59,7 +59,7 @@ def signup():
 def reset_password_request():
     if current_user.is_authenticated:
         return redirect(url_for('main.index'))
-    
+
     form = ResetPasswordRequestForm()
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first()
@@ -67,7 +67,7 @@ def reset_password_request():
             send_password_reset_email(user)
         flash(_('Check your email for instructions to reset your password'))
         return redirect(url_for('auth.login'))
-    
+
     return render_template('auth/reset_password_request.html', title=_('Reset password'), form=form)
 
 
@@ -75,16 +75,16 @@ def reset_password_request():
 def reset_password(token):
     if current_user.is_authenticated:
         return redirect('main.index')
-    
+
     user = User.verify_reset_password_token(token)
     if not user:
         return redirect(url_for('main.index'))
-    
+
     form = RequestPasswordForm()
     if form.validate_on_submit():
         user.set_password(form.password.data)
         db.session.commit()
         flash(_('Your password has been reset.'))
         return redirect(url_for('auth.login'))
-    
+
     return render_template('auth/reset_password.html', title=_('Reset Password'), form=form)

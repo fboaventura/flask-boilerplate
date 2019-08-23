@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # coding: utf-8
-from flask import request
+# from flask import request
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, TextAreaField
-from wtforms.validators import ValidationError, DataRequired, Length, Email, Optional
+from wtforms.validators import ValidationError, DataRequired, Length, Optional
 from flask_babel import _, lazy_gettext as _l
 from app.models import User
 
@@ -23,9 +23,3 @@ class EditProfileForm(FlaskForm):
             user = User.query.filter_by(username=self.username.data).first()
             if user is not None:
                 raise ValidationError(_('Please use a different username'))
-
-    # def validate_email(self, email):
-    #     if email.data != self.original_email:
-    #         user = User.query.filter_by(email=email.data).first()
-    #         if user is not None:
-    #             raise ValidationError(_('Please use a different email address'))

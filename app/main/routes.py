@@ -2,7 +2,7 @@
 # coding: utf-8
 
 from datetime import datetime
-from flask import render_template, flash, redirect, url_for, request, g, jsonify, current_app
+from flask import render_template, flash, redirect, url_for, request, g
 from flask_login import current_user, login_required
 from flask_babel import _, get_locale
 from app import db
@@ -54,4 +54,3 @@ def edit_profile():
         # form.email.data = current_user.email
 
     return render_template('edit_profile.html', page_title=_('Edit Profile'), form=form)
-

@@ -46,6 +46,10 @@ class Config(object):
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     MAIL_DEBUG = os.environ.get('MAIL_DEBUG', False)
+    COMPRESS_MIMETYPES = ['text/html', 'text/css', 'text/xml', 'application/json', 'application/javascript']
+    COMPRESS_LEVEL = 6
+    COMPRESS_MIN_SIZE = 500
+    CACHE_TYPE = 'simple'
 
 # Get your reCaptcha key on: https://www.google.com/recaptcha/admin/create
 # RECAPTCHA_PUBLIC_KEY = "6LffFNwSAAAAAFcWVy__EnOCsNZcG2fVHFjTBvRP"

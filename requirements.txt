@@ -3,7 +3,8 @@ Flask-Admin
 Flask-Babel
 # Flask-Bootstrap4
 Bootstrap-Flask
-Flask-Cache
+Flask-Caching
+Flask-Compress
 Flask-FlatPages
 Flask-Gravatar
 Flask-Login
