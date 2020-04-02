@@ -8,7 +8,7 @@ Flask-Compress==1.4.0
 Flask-FlatPages==0.7.1
 Flask-Gravatar==0.5.0
 Flask-Login==0.5.0
-Flask-Mail
+Flask-Mail==0.9.1
 Flask-Migrate
 Flask-Moment
 Flask-PyMongo
