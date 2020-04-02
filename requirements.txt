@@ -1,5 +1,5 @@
 Flask==1.1.1
-Flask-Admin
+Flask-Admin==1.5.5
 Flask-Babel
 # Flask-Bootstrap4
 Bootstrap-Flask
