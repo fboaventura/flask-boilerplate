@@ -12,7 +12,7 @@ Flask-Mail==0.9.1
 Flask-Migrate==2.5.3
 Flask-Moment==0.9.0
 Flask-PyMongo==2.3.0
-Flask-Restless
+Flask-Restless==0.17.0
 Flask-SQLAlchemy
 Flask-Themes
 Flask-Uploads
