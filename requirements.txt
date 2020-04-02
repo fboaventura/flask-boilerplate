@@ -11,7 +11,7 @@ Flask-Login==0.5.0
 Flask-Mail==0.9.1
 Flask-Migrate==2.5.3
 Flask-Moment==0.9.0
-Flask-PyMongo
+Flask-PyMongo==2.3.0
 Flask-Restless
 Flask-SQLAlchemy
 Flask-Themes
