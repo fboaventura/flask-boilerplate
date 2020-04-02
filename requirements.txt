@@ -4,7 +4,7 @@ Flask-Babel==1.0.0
 # Flask-Bootstrap4
 Bootstrap-Flask==1.1.0
 Flask-Caching==1.8.0
-Flask-Compress
+Flask-Compress==1.4.0
 Flask-FlatPages
 Flask-Gravatar
 Flask-Login
