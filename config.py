@@ -37,6 +37,7 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     BOOTSTRAP_FONTAWESOME = True
     CSRF_ENABLED = True
+    ADMINS = os.environ.get('ADMINS', [])
     BABEL_DEFAULT_LOCALE = os.environ.get('LOCALE', 'en')
     LANGUAGES = os.environ.get('LANGUAGES', ['en', 'pt_BR'])
     BABEL_DEFAULT_TIMEZONE = os.environ.get('TIMEZONE', 'UTC')

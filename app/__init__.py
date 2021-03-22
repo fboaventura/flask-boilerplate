@@ -10,7 +10,7 @@ Licence: GPLv3
 import os
 import logging
 from logging.handlers import SMTPHandler, RotatingFileHandler
-from flask import Flask, request, current_app
+from flask import Flask, request, current_app, g
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
@@ -102,4 +102,8 @@ def create_app(config_class=Config):
 
 @babel.localeselector
 def get_locale():
-    return request.accept_languages.best_match(current_app.config['LANGUAGES'])
+    # Check if a language code is already defined
+    if not g.get('lang_code', None):
+        # Otherwise set one from the best match from the list of configured languages
+        g.lang_code = request.accept_languages.best_match(current_app.config['LANGUAGES'])
+    return g.lang_code
