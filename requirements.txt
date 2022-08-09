@@ -1,4 +1,4 @@
-Flask==1.1.2
+Flask==2.2.2
 Flask-Admin==1.5.7
 Flask-Babel==2.0.0
 # Flask-Bootstrap4
