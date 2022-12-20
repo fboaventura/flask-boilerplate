@@ -7,7 +7,7 @@ Flask-Caching
 Flask-Compress
 Flask-FlatPages
 Flask-Gravatar
-Flask-Login
+Flask-Login==0.6.2
 Flask-Mail
 Flask-Migrate
 Flask-Moment
