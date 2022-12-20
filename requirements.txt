@@ -16,7 +16,7 @@ Flask-Restless
 Flask-SQLAlchemy
 Flask-Themes
 Flask-Uploads
-Flask-WTF
+Flask-WTF==1.0.1
 python-dotenv
 Jinja2
 Markdown
