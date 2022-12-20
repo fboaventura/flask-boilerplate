@@ -8,7 +8,7 @@ Flask-Compress
 Flask-FlatPages
 Flask-Gravatar
 Flask-Login
-Flask-Mail
+Flask-Mail==0.9.1
 Flask-Migrate
 Flask-Moment
 Flask-PyMongo
