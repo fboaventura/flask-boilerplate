@@ -27,6 +27,6 @@ Werkzeug
 argparse
 blinker
 pymongo
-python-dateutil
+python-dateutil==2.8.2
 PyJWT
 pytest
