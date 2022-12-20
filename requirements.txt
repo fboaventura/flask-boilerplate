@@ -11,7 +11,7 @@ Flask-Login
 Flask-Mail
 Flask-Migrate
 Flask-Moment
-Flask-PyMongo
+Flask-PyMongo==2.3.0
 Flask-Restless
 Flask-SQLAlchemy
 Flask-Themes
