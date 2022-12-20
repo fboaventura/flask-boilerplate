@@ -17,7 +17,7 @@ Flask-SQLAlchemy
 Flask-Themes
 Flask-Uploads
 Flask-WTF
-python-dotenv
+python-dotenv==0.21.0
 Jinja2
 Markdown
 PyYAML
