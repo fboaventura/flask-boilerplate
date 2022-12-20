@@ -15,7 +15,7 @@ Flask-PyMongo
 Flask-Restless
 Flask-SQLAlchemy
 Flask-Themes
-Flask-Uploads
+Flask-Uploads==0.2.1
 Flask-WTF
 python-dotenv
 Jinja2
