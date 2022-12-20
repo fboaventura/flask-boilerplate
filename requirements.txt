@@ -2,7 +2,7 @@ Flask
 Flask-Admin
 Flask-Babel
 # Flask-Bootstrap4
-Bootstrap-Flask
+Bootstrap-Flask==2.2.0
 Flask-Caching
 Flask-Compress
 Flask-FlatPages
