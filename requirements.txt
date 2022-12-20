@@ -24,7 +24,7 @@ PyYAML
 SQLAlchemy
 WTForms
 Werkzeug
-argparse
+argparse==1.4.0
 blinker
 pymongo
 python-dateutil
