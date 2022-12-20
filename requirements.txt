@@ -19,7 +19,7 @@ Flask-Uploads
 Flask-WTF
 python-dotenv
 Jinja2
-Markdown
+Markdown==3.4.1
 PyYAML
 SQLAlchemy
 WTForms
