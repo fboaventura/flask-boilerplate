@@ -1,6 +1,6 @@
 Flask
 Flask-Admin
-Flask-Babel
+Flask-Babel==3.1.0
 # Flask-Bootstrap4
 Bootstrap-Flask
 Flask-Caching
