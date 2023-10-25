@@ -29,4 +29,4 @@ blinker
 pymongo
 python-dateutil
 PyJWT
-pytest
+pytest==7.4.3
