@@ -25,7 +25,7 @@ SQLAlchemy
 WTForms
 Werkzeug
 argparse
-blinker
+blinker==1.7.0
 pymongo
 python-dateutil
 PyJWT
