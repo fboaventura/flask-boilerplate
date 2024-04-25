@@ -4,7 +4,7 @@ Flask-Babel
 # Flask-Bootstrap4
 Bootstrap-Flask
 Flask-Caching
-Flask-Compress
+Flask-Compress==1.15
 Flask-FlatPages
 Flask-Gravatar
 Flask-Login
