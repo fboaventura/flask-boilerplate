@@ -10,7 +10,7 @@ Flask-Gravatar
 Flask-Login
 Flask-Mail
 Flask-Migrate
-Flask-Moment
+Flask-Moment==1.0.6
 Flask-PyMongo
 Flask-Restless
 Flask-SQLAlchemy
