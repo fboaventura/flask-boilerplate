@@ -23,7 +23,7 @@ Markdown
 PyYAML
 SQLAlchemy
 WTForms
-Werkzeug
+Werkzeug==3.0.4
 argparse
 blinker
 pymongo
