@@ -21,7 +21,7 @@ python-dotenv
 Jinja2
 Markdown
 PyYAML
-SQLAlchemy
+SQLAlchemy==2.0.34
 WTForms
 Werkzeug
 argparse
