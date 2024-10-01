@@ -26,7 +26,7 @@ WTForms
 Werkzeug
 argparse
 blinker
-pymongo==4.9.1
+pymongo==4.10.0
 python-dateutil
 PyJWT
 pytest
