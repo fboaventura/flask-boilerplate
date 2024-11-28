@@ -28,5 +28,5 @@ argparse
 blinker
 pymongo==4.9.1
 python-dateutil
-PyJWT
+PyJWT==2.10.1
 pytest
