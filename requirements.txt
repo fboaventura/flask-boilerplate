@@ -20,7 +20,7 @@ Flask-WTF
 python-dotenv
 Jinja2
 Markdown
-PyYAML
+PyYAML==6.0.1
 SQLAlchemy
 WTForms
 Werkzeug
