@@ -9,7 +9,7 @@ Flask-FlatPages
 Flask-Gravatar
 Flask-Login
 Flask-Mail
-Flask-Migrate
+Flask-Migrate==4.0.2
 Flask-Moment
 Flask-PyMongo
 Flask-Restless
