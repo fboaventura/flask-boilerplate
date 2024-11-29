@@ -13,7 +13,7 @@ Flask-Migrate
 Flask-Moment
 Flask-PyMongo
 Flask-Restless
-Flask-SQLAlchemy
+Flask-SQLAlchemy==3.0.3
 Flask-Themes
 Flask-Uploads
 Flask-WTF
