@@ -5,7 +5,7 @@ Flask-Babel
 Bootstrap-Flask
 Flask-Caching
 Flask-Compress
-Flask-FlatPages
+Flask-FlatPages==0.8.2
 Flask-Gravatar
 Flask-Login
 Flask-Mail
