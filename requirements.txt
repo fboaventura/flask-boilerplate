@@ -22,7 +22,7 @@ Jinja2
 Markdown
 PyYAML
 SQLAlchemy
-WTForms
+WTForms==3.3.0
 Werkzeug
 argparse
 blinker
